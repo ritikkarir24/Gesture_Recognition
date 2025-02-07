@@ -1,62 +1,51 @@
-# Gesture_Recognition
-# Technologies Used and Justifications
+#Gesture Recognition
+## **Project Overview**
 
-- NumPy: Efficient numerical operations, essential for handling image arrays.
+This project focuses on developing a gesture recognition system for smart TVs. The goal is to allow users to control the TV without a remote using five predefined gestures:
 
-OpenCV (cv2): For reading, resizing, and preprocessing video frames.
+- **Thumbs Up:** Increase volume
+- **Thumbs Down:** Decrease volume
+- **Left Swipe:** Jump backward 10 seconds
+- **Right Swipe:** Jump forward 10 seconds
+- **Stop:** Pause the movie
 
-ImageIO & Scikit-Image: To load and transform image data seamlessly.
+Each video consists of 30 frames, and the system must process these frames to identify gestures accurately.
 
-TensorFlow & Keras: The primary deep learning framework for model building, offering flexibility and GPU support.
+## **Objectives**
 
-Matplotlib: Visualizing data and model performance.
+1. **Data Generator:** Efficiently handle batches of video data with preprocessing steps like cropping, resizing, and normalization.
+2. **Model Development:** Build an accurate, parameter-efficient model for real-time gesture recognition.
+3. **Documentation:** Detail the rationale behind model choices and the experimental process leading to the final model.
 
-GRU & LSTM: RNN architectures for capturing temporal dependencies in video sequences.
+## **Technologies Used**
 
-Conv2D & Conv3D: To extract spatial features from individual frames and across temporal dimensions.
+- **NumPy:** Efficient numerical operations for image arrays.
+- **OpenCV (cv2):** Reading, resizing, and preprocessing video frames.
+- **ImageIO & Scikit-Image:** Loading and transforming image data.
+- **TensorFlow & Keras:** Building and training deep learning models.
+- **Matplotlib:** Visualizing data and model performance.
+- **GRU & LSTM:** Capturing temporal dependencies in video sequences.
+- **Conv2D & Conv3D:** Extracting spatial and temporal features.
+- **Model Callbacks:** Optimizing training with EarlyStopping and ReduceLROnPlateau.
 
-Model Callbacks (EarlyStopping, ReduceLROnPlateau): For training optimization and preventing overfitting.
+## **Project Workflow**
 
-3. Detailed Process and Logic Explanation
+### **1. Data Preprocessing**
 
-Data Preprocessing:
+- **Frame Extraction:** Extract 30 frames per video.
+- **Resizing & Normalization:** Standardizes frame size and scales pixel values (0-1).
+- **Batch Generator:** Handles data feeding efficiently during training.
 
-Frame Extraction: Extract 30 frames per video.
+### **2. Model Architecture**
 
-Resizing & Normalization: Standardizes frame size and scales pixel values between 0 and 1 to improve model performance.
+- **Convolutional Layers (Conv2D/Conv3D):** Extract spatial and temporal features.
+- **TimeDistributed Layer:** Applies convolutional operations across frames.
+- **Recurrent Layers (GRU/LSTM):** Learn temporal patterns in sequences.
+- **Dense Layers:** Perform final gesture classification.
+- **Regularization:** Dropout and Batch Normalization reduce overfitting.
 
-Batch Generator: Handles real-time data feeding during model training, reducing memory load.
+### **3. Training Strategy**
 
-Model Architecture:
-
-Convolutional Layers (Conv2D/Conv3D):
-
-Extract spatial features from frames.
-
-Apply filters to detect edges, patterns, and motion.
-
-TimeDistributed Layer:
-
-Applies the same convolutional operations to each frame independently, preserving temporal structure.
-
-Recurrent Layers (GRU/LSTM):
-
-Capture temporal dependencies across video frames.
-
-LSTM excels in learning long-term dependencies, while GRU offers faster training with comparable performance.
-
-Dense Layers:
-
-Perform final classification based on learned features.
-
-Dropout & Batch Normalization:
-
-Reduce overfitting and stabilize learning.
-
-Training Strategy:
-
-Model Checkpoints: Save the best model based on validation accuracy.
-
-Early Stopping: Halt training when performance plateaus.
-
-ReduceLROnPlateau: Adjust learning rate dynamically to improve convergence.****
+- **Model Checkpoints:** Save the best model based on validation accuracy.
+- **Early Stopping:** Prevent overfitting by halting early.
+- **Learning Rate Scheduling:** Dynamically adjust learning rate with ReduceLROnPlateau.
