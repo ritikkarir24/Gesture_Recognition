@@ -1,7 +1,7 @@
 # **Gesture Recognition**
 
 ## **INDEX**
-- [Conclusion](#conclusion)
+- [Potential Queries]
 
 
 ## **Project Overview**
