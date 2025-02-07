@@ -1,4 +1,9 @@
-#Gesture Recognition
+# **Gesture Recognition**
+
+## **INDEX**
+- [Conclusion](#conclusion)
+
+
 ## **Project Overview**
 
 This project focuses on developing a gesture recognition system for smart TVs. The goal is to allow users to control the TV without a remote using five predefined gestures:
@@ -51,3 +56,4 @@ Each video consists of 30 frames, and the system must process these frames to id
 - **Learning Rate Scheduling:** Dynamically adjust learning rate with ReduceLROnPlateau.
 
 ## **Potential Queries**
+
