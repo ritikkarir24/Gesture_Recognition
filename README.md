@@ -49,3 +49,5 @@ Each video consists of 30 frames, and the system must process these frames to id
 - **Model Checkpoints:** Save the best model based on validation accuracy.
 - **Early Stopping:** Prevent overfitting by halting early.
 - **Learning Rate Scheduling:** Dynamically adjust learning rate with ReduceLROnPlateau.
+
+## **Potential Queries**
