@@ -1,10 +1,14 @@
 # **Gesture Recognition**
 
 ## **INDEX**
+- [Overview](#overview)
+- [Objectives](#Objectives)
+- [Technologies USed](#Technology-Used)
+- [Project WorkFlow](#Project-Workflow)
 - [Potential Queries](#Potential-Queries)
 
 
-## **Project Overview**
+## **Overview**
 
 This project focuses on developing a gesture recognition system for smart TVs. The goal is to allow users to control the TV without a remote using five predefined gestures:
 
@@ -56,4 +60,11 @@ Each video consists of 30 frames, and the system must process these frames to id
 - **Learning Rate Scheduling:** Dynamically adjust learning rate with ReduceLROnPlateau.
 
 ## **Potential Queries**
+### How is Data Augmentation is performed?
+Data augmentation was performed by shifting, cropping, and rotating the images. This helps in making the model more robust to variations in the input data.
 
+### How did I ensured model doesn't overfit
+Early stopping and dropout layers were used to prevent overfitting. Additionally, data augmentation helped in making the model more robust to variations in the input data.
+
+### Purpose of using Conv3D instead of LSTM/GRU
+Conv3D layers are effective for extracting spatial features from video frames, while LSTM/GRU layers are suitable for capturing temporal dependencies. Combining these layers allows the model to learn both spatial and temporal features, which is crucial for gesture recognition.
