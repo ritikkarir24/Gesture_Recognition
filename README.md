@@ -3,7 +3,7 @@
 ## **INDEX**
 - [Overview](#overview)
 - [Objectives](#Objectives)
-- [Technologies USed](#Technology-Used)
+- [Technologies Used](#Technologies-Used)
 - [Project WorkFlow](#Project-Workflow)
 - [Potential Queries](#Potential-Queries)
 
